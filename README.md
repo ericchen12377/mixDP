@@ -1,2 +1,2 @@
 # mixDP
- mixture model with Dirichlet Process
+ Mixture models with Dirichlet Process
