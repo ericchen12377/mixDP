@@ -7,7 +7,7 @@
 
 
 ## Installation
-To install from Github:
+To install from Github: 
 ```
 devtools::install_github("ericchen12377/mixDP")
 #build vignettes if needed
