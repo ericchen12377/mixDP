@@ -2,7 +2,6 @@
 #'
 #' @description  Define the function to simulate the datasets with multiple dimensions and multivariate normal distributions.
 #'
-#'percentage, SDlist, t, Tmatrix, N, Coeflist, seed=10, random = TRUE
 #' @param percetage Percentage of each cluster, sum to 1
 #' @param SDlist List of standard deviation matrices for each cluster
 #' @param t Length of trajectory, t=1 will be single point;
@@ -45,24 +44,28 @@
 #' percentage <- c(0.7, 0.3)
 #' N <- 200
 #'
+#' # generate the feature matrix from polynomial formula
+#' T <- c(1:8)
+#' Tmatrix <- cbind(1, T, T^2, T^3)
+#'
 #' # generate list of standard deviation matrices
 #' error_Sigma1 <- matrix(c(1,0,0,1),2,2)
 #' error_Sigma2 <- matrix(c(1,0,0,1),2,2)
 #' SDlist <- list(error_Sigma1,error_Sigma2)
 #'
-#' # generate the feature matrix from polynomial formula
-#' T <- c(1:8)
-#' Tmatrix <- cbind(1, T, T^2, T^3)
+
 #' # generate list of coefficient matrices
 #' # cluster 1
-#' A1 <- c(100, 1, 1, 1)
+#' A1 <- c(100,1,1,1)
+#' B1 <- c(40,1,1,1)
 #' # cluster 2
-#' A2 <- c(80, 1, 1, 1)
-#' Coeflist <- list(A1, A2)
+#' A2 <- c(80,1,1,1)
+#' B2 <- c(30,1,1,1)
+#' Coeflist <- list(cbind(A1, B1), cbind(A2, B2))
+#'
 #' # simulate the dataset
 #' data_sim(percentage, SDlist, t, Tmatrix, N, Coeflist, seed=10, random = TRUE)
 #' }
-#' @seealso
 
 
 
@@ -70,26 +73,6 @@
 
 
 
-
-A1 <- c(100,1,1,1)
-B1 <- c(40,1,1,1)
-
-#error1 <- rnorm(N,0,1)
-###cluster 2
-A2 <- c(80,1,1,1)
-B2 <- c(30,1,1,1)
-
-
-Coeflist <- list(cbind(A1, B1),
-                 cbind(A2, B2))
-
-Data <- data_sim(percentage, SDlist, t, Tmatrix, N, Coeflist, seed=10, random = TRUE)
-
-Ymatrix = Data$Data[,1:2]
-Xmatrix = Data$Data[,3:6]
-
-
-data_sim(percentage, SDlist, t, Tmatrix, N, Coeflist, seed=10, random = FALSE)
 
 
 data_sim <- function(percentage, SDlist, t, Tmatrix, N, Coeflist, seed, random = TRUE){
