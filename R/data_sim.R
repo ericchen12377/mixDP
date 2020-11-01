@@ -1,8 +1,9 @@
 #' @title Data Simulation Function
 #'
-#' @description  Define the function to simulate the datasets with multiple dimensions and multivariate normal distributions.
+#' @description  Define the function for dataset simulation.
+#' Datasets with single/multiple dimensions and univariate/multivariate normal distributions.
 #'
-#' @param percetage Percentage of each cluster, sum to 1
+#' @param percentage Percentage of each cluster, sum to 1
 #' @param SDlist List of standard deviation matrices for each cluster
 #' @param t Length of trajectory, t=1 will be single point;
 #' t can be used to specify the length of trajectory for training/validation/testing
