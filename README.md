@@ -1,5 +1,5 @@
 # mixDP
- Mixture models with Dirichlet Process
+ Mixture models with Dirichlet Process 
  
  ## Description
 
