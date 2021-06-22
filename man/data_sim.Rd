@@ -29,57 +29,7 @@ or approximate percentage for each cluster}
 Simulation dataset
 }
 \description{
-Define the function for dataset simulation.
-Datasets with single/multiple dimensions and univariate/multivariate normal distributions.
-}
-\examples{
-\donttest{
-######single dimension simulation######
-t <- c(1:8)
-percentage <- c(0.7, 0.3)
-N <- 200
+Define the function to simulate the datasets with multiple dimensions and multivariate normal distributions.
 
-# generate the feature matrix from polynomial formula
-T <- c(1:8)
-Tmatrix <- cbind(1, T, T^2, T^3)
-
-# generate list of standard deviation matrices
-SDlist = c(1, 1)
-
-# generate list of coefficient matrices
-# cluster 1
-A1 <- c(100, 1, 1, 1)
-# cluster 2
-A2 <- c(80, 1, 1, 1)
-Coeflist <- list(A1, A2)
-
-# simulate the dataset
-data_sim(percentage, SDlist, t, Tmatrix, N, Coeflist, seed=10, random = TRUE)
-
-######multiple dimensions simulation######
-t <- c(1:8)
-percentage <- c(0.7, 0.3)
-N <- 200
-
-# generate the feature matrix from polynomial formula
-T <- c(1:8)
-Tmatrix <- cbind(1, T, T^2, T^3)
-
-# generate list of standard deviation matrices
-error_Sigma1 <- matrix(c(1,0,0,1),2,2)
-error_Sigma2 <- matrix(c(1,0,0,1),2,2)
-SDlist <- list(error_Sigma1,error_Sigma2)
-
-# generate list of coefficient matrices
-# cluster 1
-A1 <- c(100,1,1,1)
-B1 <- c(40,1,1,1)
-# cluster 2
-A2 <- c(80,1,1,1)
-B2 <- c(30,1,1,1)
-Coeflist <- list(cbind(A1, B1), cbind(A2, B2))
-
-# simulate the dataset
-data_sim(percentage, SDlist, t, Tmatrix, N, Coeflist, seed=10, random = TRUE)
-}
+percentage, SDlist, t, Tmatrix, N, Coeflist, seed=10, random = TRUE
 }

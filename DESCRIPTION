@@ -15,11 +15,15 @@ Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.1.0
 Imports:
-    stats
+    stats,
+    mvtnorm,
+    matrixStats,
+    mixtools,
+    matrixcalc,
+    dplyr,
+    magrittr
 Suggests:
     tidyverse,
     knitr,
     rmarkdown
-URL: https://github.com/ericchen12377/mixDP
-BugReports: https://github.com/ericchen12377/mixDP/issues
 VignetteBuilder: knitr
