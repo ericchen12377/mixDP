@@ -16,7 +16,7 @@ library(mixDP)
 #view vignettes
 browseVignettes('mixDP')
 ```
-To install from CRAN-Package mixDP
+To install from CRAN-Package mixDP (not published yet)
 ```
 install.packages("mixDP")
 ```
